@@ -1,0 +1,91 @@
+.contacts__wrapper {
+  display: flex;
+  justify-content: space-between;
+  @include media-big-tablet {
+    flex-wrap: wrap;
+  }
+}
+
+.contacts__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.contacts__inf {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  @include media-big-tablet {
+    order: 2;
+  }
+}
+
+.contacts__title {
+  @include font($size: 4rem);
+  @include media-tablet {
+    max-width: 100%;
+    @include font($size: 2.8rem);
+  }
+}
+
+.contacts__form {
+  width: 50%;
+  @extend %font-add;
+  @include font($size: 1.5rem);
+  @include media-big-tablet {
+    margin: 0 auto;
+    order: 1;
+    width: 100%;
+  }
+}
+
+.contacts__addres {
+  @include font($size: 1.5rem, $height: 2.8rem);
+}
+
+label {
+  display: block;
+}
+input {
+  width: 100%;
+  background-color: black;
+  padding: 15px 5px;
+  color: white;
+  border-color: white;
+  &::placeholder {
+    color: white;
+    opacity: 1;
+  }
+  &:invalid {
+    border-color: rgb(255, 64, 64);
+  }
+  &[type='submit'] {
+    float: right;
+    background-color: white;
+    color: black;
+    max-width: 138px;
+    text-decoration: none;
+    margin: 15px 0;
+    @include media-tablet {
+      max-width: 100%;
+    }
+  }
+}
+
+textarea {
+  @extend %font-add;
+  @include font($size: 1.5rem, $height: 1.5em);
+  width: 100%;
+  height: 110px;
+  background-color: black;
+  border-color: white;
+  color: white;
+  display: block;
+  padding: 15px 5px;
+  &::placeholder {
+    color: white;
+    opacity: 1;
+  }
+}

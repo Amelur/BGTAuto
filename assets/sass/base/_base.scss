@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  background-color: rgb(16, 19, 23);
+  color: white;
+  @extend %font-prim;
+  @include font($size: 1.8rem, $height: 160%);
+}
+
+h3 {
+  font-family: 'Roboto';
+}
+
+.wrapper {
+  max-width: $content-width;
+  margin: auto;
+  @include media-big-tablet {
+    max-width: 980px;
+  }
+  @include media-tablet {
+    max-width: 708px;
+  }
+  @include media-mobile {
+    max-width: 300px;
+  }
+}

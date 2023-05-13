@@ -1,0 +1,6 @@
+.footer__desc {
+  @extend %font-add;
+  @include font($size: 1.4rem);
+  text-align: center;
+  padding: 40px 0 30px;
+}

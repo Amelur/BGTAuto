@@ -1,0 +1,34 @@
+.about__wrapper {
+  display: flex;
+  padding: 120px 0;
+  justify-content: space-around;
+  align-items: center;
+  @include media-big-tablet {
+    flex-wrap: wrap;
+    padding: 60px 0;
+  }
+}
+
+.about__logo {
+  max-width: 460px;
+  max-height: 320px;
+  @include media-big-tablet {
+    max-width: 100%;
+  }
+}
+
+.about__content {
+  text-align: center;
+}
+
+.about__title {
+  @include font($size: 2.2rem);
+  @include media-big-tablet {
+    padding-top: 30px;
+  }
+}
+.about__subttitle {
+  padding-top: 32px;
+  @include font($size: 1.5rem);
+  @extend %font-add;
+}

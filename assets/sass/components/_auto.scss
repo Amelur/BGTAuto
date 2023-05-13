@@ -1,0 +1,47 @@
+.auto__title {
+  @include font($size: 4rem);
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 120px 0;
+  @include media-big-tablet {
+    padding: 60px 0;
+  }
+}
+
+.auto__row {
+  display: flex;
+  height: 300px;
+  @include media-tablet {
+    height: 100%;
+    &__1 {
+      flex-wrap: wrap-reverse;
+    }
+    &__2 {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.auto__card {
+  width: 100%;
+  background-color: rgb(26, 29, 35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.auto__name {
+  padding-top: 30px;
+}
+.auto__desc {
+  padding: 30px;
+  font-family: 'Roboto', Arial, sans-serif;
+  text-align: center;
+}

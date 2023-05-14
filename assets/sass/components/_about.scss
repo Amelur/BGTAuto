@@ -1,6 +1,6 @@
 .about__wrapper {
   display: flex;
-  padding: 120px 0;
+  padding: 120px 0 90px;
   justify-content: space-around;
   align-items: center;
   @include media-big-tablet {
@@ -10,15 +10,20 @@
 }
 
 .about__logo {
-  max-width: 460px;
-  max-height: 320px;
+  max-width: 50%;
+
   @include media-big-tablet {
     max-width: 100%;
   }
 }
 
 .about__content {
+  max-width: 50%;
   text-align: center;
+  @include media-tablet {
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }
 
 .about__title {
@@ -27,8 +32,8 @@
     padding-top: 30px;
   }
 }
-.about__subttitle {
-  padding-top: 32px;
-  @include font($size: 1.5rem);
+.about__subtitle {
+  padding-top: 25px;
+  @include font($size: 1.6rem);
   @extend %font-add;
 }

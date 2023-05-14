@@ -1,0 +1,37 @@
+%burger-line {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.burger {
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 22px;
+  @extend %transition;
+  margin-left: auto;
+
+  @include media-big-mobile {
+    display: block;
+  }
+  &::before {
+    @extend %burger-line;
+    top: 0;
+  }
+  &::after {
+    @extend %burger-line;
+    bottom: 0;
+  }
+  span {
+    @extend %burger-line;
+    top: 10px;
+  }
+  &_active {
+    transform: rotate(90deg);
+  }
+}

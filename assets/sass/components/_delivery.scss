@@ -1,0 +1,38 @@
+.delivery__wrapper {
+  padding: 0 0 120px;
+  @include media-tablet {
+    padding: 0 0 60px;
+  }
+}
+
+.delivery__title {
+  text-align: center;
+  padding: 30px 0;
+  @include font($size: 2.2rem);
+}
+
+.delivery__content {
+  @extend %font-add;
+  display: flex;
+  justify-content: space-between;
+
+  @include media-tablet {
+    @include font($size: 1.5rem);
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+
+.delivery__desc {
+  padding: 15px;
+}
+
+.delivery__subtitle {
+  @extend %font-add;
+}
+
+.delivery__text {
+  padding-top: 25px;
+  @include font($size: 1.6rem);
+  @extend %font-add;
+}

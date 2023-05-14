@@ -7,9 +7,14 @@
 }
 
 .contacts__container {
+  font-family: 'Roboto';
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  @include media-tablet {
+    text-align: center;
+    @include font($size: 1.7rem);
+  }
 }
 
 .contacts__inf {
@@ -23,6 +28,7 @@
 }
 
 .contacts__title {
+  @extend %font-prim;
   @include font($size: 4rem);
   @include media-tablet {
     max-width: 100%;
@@ -35,9 +41,9 @@
   @extend %font-add;
   @include font($size: 1.5rem);
   @include media-big-tablet {
-    margin: 0 auto;
     order: 1;
     width: 100%;
+    padding: 0 15px;
   }
 }
 
@@ -88,4 +94,24 @@ textarea {
     color: white;
     opacity: 1;
   }
+}
+
+.phone__link {
+  display: block;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.contacts__name {
+  font-weight: 400;
+}
+
+.show-details {
+  cursor: pointer;
+  text-decoration: underline;
 }

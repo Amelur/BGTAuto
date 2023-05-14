@@ -1,18 +1,42 @@
+.header__wrapper {
+  @include media-big-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
 .header__logo {
-  width: 128px;
-  height: 80px;
-  margin: 45px auto 13px;
+  margin: 0 auto;
+  @include media-big-mobile {
+    margin: 0;
+    max-width: 28%;
+    flex: 1;
+  }
 }
 
 .logo-title {
   @include font($size: 2.2rem);
   text-align: center;
   padding-bottom: 13px;
+  @include media-big-mobile {
+    max-width: 28%;
+    margin: 0;
+    padding-bottom: 0px;
+  }
+}
+
+.header__burger {
+  width: 28%;
 }
 
 .header__line {
   background-color: white;
   height: 0.85px;
+  @include media-big-mobile {
+    display: none;
+  }
 }
 
 .nav {
@@ -20,15 +44,15 @@
   justify-content: space-between;
   align-items: center;
   &__list {
-    display: flex;
-    justify-content: center;
     @include font($size: 1.4rem, $height: 30px);
     @extend %font-add;
+    display: flex;
+    justify-content: center;
   }
   &__item {
     padding: 0 10px;
   }
-  @include media-tablet {
+  @include media-big-mobile {
     display: none;
   }
 }

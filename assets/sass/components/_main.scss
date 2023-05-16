@@ -13,7 +13,6 @@
 .main__subtitle {
   @include font($size: 2rem, $height: 1.67em);
   text-align: center;
-  padding-bottom: 20px;
   @include media-big-tablet {
     @include font($size: 1.5rem);
   }

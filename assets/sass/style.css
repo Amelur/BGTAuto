@@ -373,7 +373,7 @@ p {
   font-family: "proxima-n-w01-reg";
   src: url("../fonts/proxima_nova_reg-webfont.ttf");
 }
-.burger {
+.burger_active span, .burger_active::after, .burger_active::before, .burger_active, .burger span, .burger::after, .burger::before, .burger {
   transition: all 0.3s ease-out;
 }
 
@@ -424,7 +424,11 @@ h3 {
   }
 }
 
-.burger span, .burger::after, .burger::before {
+.lock {
+  overflow: hidden;
+}
+
+.burger_active::after, .burger_active::before, .burger span, .burger::after, .burger::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -433,8 +437,8 @@ h3 {
 }
 
 .burger {
-  cursor: pointer;
   z-index: 3;
+  cursor: pointer;
   display: none;
   position: relative;
   width: 30px;
@@ -455,15 +459,21 @@ h3 {
 .burger span {
   top: 10px;
 }
-.burger_active {
-  transform: rotate(90deg);
+
+.burger_active::before {
+  top: 10px;
+  transform: rotate(45deg);
+}
+.burger_active::after {
+  bottom: 10px;
+  transform: rotate(-45deg);
+}
+.burger_active span {
+  opacity: 0;
 }
 
 @media (max-width: 560px) {
   .header__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
   }
 }
@@ -473,9 +483,8 @@ h3 {
 }
 @media (max-width: 560px) {
   .header__logo {
-    margin: 0;
-    max-width: 28%;
-    flex: 1;
+    margin: 0 auto -50px;
+    width: 50%;
   }
 }
 
@@ -490,14 +499,8 @@ h3 {
 }
 @media (max-width: 560px) {
   .logo-title {
-    max-width: 28%;
-    margin: 0;
-    padding-bottom: 0px;
+    display: none;
   }
-}
-
-.header__burger {
-  width: 28%;
 }
 
 .header__line {
@@ -522,21 +525,52 @@ h3 {
   line-height: 30px;
   letter-spacing: 0;
   display: flex;
-  justify-content: center;
+}
+@media (max-width: 560px) {
+  .nav__list {
+    padding-top: 75px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    text-align: center;
+    column-gap: 30px;
+    top: -20px;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    flex-direction: column;
+    background-color: black;
+    row-gap: 20px;
+  }
+  .nav__list_active {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 .nav__item {
   padding: 0 10px;
 }
+
+.header__icon {
+  width: 30px;
+  height: 30px;
+}
 @media (max-width: 560px) {
-  .nav {
+  .header__icon {
     display: none;
   }
 }
-
-.header__icon {
-  float: right;
-  width: 25px;
-  height: 25px;
+.header__icon_inst {
+  width: 30px;
+  height: 30px;
 }
 
 .main__title {
@@ -574,7 +608,6 @@ h3 {
   line-height: 1.67em;
   letter-spacing: 0;
   text-align: center;
-  padding-bottom: 20px;
 }
 @media (max-width: 1040px) {
   .main__subtitle {
@@ -587,62 +620,38 @@ h3 {
 }
 
 .slider {
-  margin: 0 auto 20px;
-  max-width: 90%;
-  height: 580px;
+  margin: 30px auto 60px;
+  width: 80%;
+  height: 550px;
   overflow: hidden;
   position: relative;
+}
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+    height: 100%;
+  }
+}
+
+.slide-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s ease;
+}
+
+.slide {
+  flex: 1 0 100%;
+  height: 100%;
   object-fit: cover;
 }
-@media (max-width: 1040px) {
-  .slider {
-    height: 480px;
-  }
-}
-@media (max-width: 768px) {
-  .slider {
-    height: 320px;
+@media (max-width: 560px) {
+  .slide {
+    width: 90%;
+    height: 70%;
   }
 }
 
-.slider img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  opacity: 0;
-}
-@media (max-width: 768px) {
-  .slider img {
-    height: auto;
-  }
-}
-
-.slider img.active {
-  opacity: 1;
-  animation: slide-in 1s forwards;
-}
-
-.slider img.previous {
-  animation: slide-out 1s forwards;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-@keyframes slide-out {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 .auto__title {
   font-size: 4rem;
   font-style: normal;

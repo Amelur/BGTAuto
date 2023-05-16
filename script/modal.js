@@ -1,4 +1,3 @@
-const body = document.querySelector('body');
 const modal = document.querySelector('.modal');
 const text = document.querySelector('.show-details');
 const close = document.querySelector('.close');

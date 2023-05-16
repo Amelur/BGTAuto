@@ -7,31 +7,50 @@
 }
 
 .burger {
-  cursor: pointer;
   z-index: 3;
+  cursor: pointer;
   display: none;
   position: relative;
   width: 30px;
   height: 22px;
-  @extend %transition;
   margin-left: auto;
-
+  @extend %transition;
   @include media-big-mobile {
     display: block;
   }
   &::before {
+    @extend %transition;
     @extend %burger-line;
     top: 0;
   }
   &::after {
+    @extend %transition;
     @extend %burger-line;
     bottom: 0;
   }
   span {
+    @extend %transition;
     @extend %burger-line;
     top: 10px;
   }
-  &_active {
-    transform: rotate(90deg);
+}
+
+.burger_active {
+  @extend %transition;
+  &::before {
+    @extend %transition;
+    @extend %burger-line;
+    top: 10px;
+    transform: rotate(45deg);
+  }
+  &::after {
+    @extend %transition;
+    @extend %burger-line;
+    bottom: 10px;
+    transform: rotate(-45deg);
+  }
+  span {
+    @extend %transition;
+    opacity: 0;
   }
 }

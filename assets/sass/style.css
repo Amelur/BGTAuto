@@ -858,9 +858,18 @@ h3 {
 }
 
 .delivery__spare {
+  font-family: "proxima-n-w01-reg", Helvetica, sans-serif;
   text-align: center;
-  font-size: 2.2rem;
-  padding: 0 10px 20px;
+  padding: 30px 10px 0;
+}
+@media (max-width: 768px) {
+  .delivery__spare {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0;
+  }
 }
 
 .contacts__wrapper {

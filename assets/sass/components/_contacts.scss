@@ -47,7 +47,7 @@
   }
 }
 
-.contacts__addres {
+.contacts__adres {
   @include font($size: 1.5rem, $height: 2.8rem);
 }
 
@@ -109,6 +109,9 @@ textarea {
 
 .contacts__name {
   font-weight: 400;
+  @include media-big-mobile {
+    padding: 0 10px;
+  }
 }
 
 .show-details {

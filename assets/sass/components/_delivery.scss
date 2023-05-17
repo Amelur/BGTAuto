@@ -7,7 +7,7 @@
 
 .delivery__title {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 0 20px;
   @include font($size: 2.2rem);
 }
 
@@ -35,4 +35,10 @@
   padding-top: 25px;
   @include font($size: 1.6rem);
   @extend %font-add;
+}
+
+.delivery__spare {
+  text-align: center;
+  font-size: 2.2rem;
+  padding: 0 10px 20px;
 }

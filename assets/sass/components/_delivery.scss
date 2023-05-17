@@ -38,7 +38,11 @@
 }
 
 .delivery__spare {
+  font-family: 'proxima-n-w01-reg', Helvetica, sans-serif;
+
   text-align: center;
-  font-size: 2.2rem;
-  padding: 0 10px 20px;
+  padding: 30px 10px 0;
+  @include media-tablet {
+    @include font($size: 1.5rem);
+  }
 }

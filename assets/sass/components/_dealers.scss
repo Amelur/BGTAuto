@@ -1,0 +1,37 @@
+.dealers {
+  background-color: white;
+  padding-bottom: 40px;
+}
+
+.dealers__title {
+  color: black;
+  text-align: center;
+  padding: 40px 10px;
+  font-weight: bold;
+  font-size: 3rem;
+  @include media-big-mobile {
+    font-size: 2.5rem;
+  }
+}
+
+.dealer-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  @include media-big-mobile {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.dealers__container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 50px 50px;
+  @include media-big-mobile {
+    gap: 30px 30px;
+    justify-content: space-around;
+  }
+}
